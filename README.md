@@ -200,7 +200,7 @@ for (i = 1; i <= n; i++) {
   - Continuing: Repeating the process until the sub-arrays are too small to sort
 - Big-O --> O(n^2) [worst case], O(nlogn)[Avg. case]
 
-# Miscelaneous:
+# Miscellaneous:
 
 ## Cartesian Product:
 
@@ -224,3 +224,123 @@ for (i = 1; i <= n; i++) {
   - Move the remaining n-1 disks from the auxiliary peg to the destination peg
 - The minimum number of moves required to solve the puzzle is 2^n - 1, where n is the number of disks.
 - Big-O --> O(2^n)
+
+# Algorithm design techniques
+
+- **Brute force:** Simple and exhaustive technique that evaluates every possible outcome to find the best solution. Ex: Linear search
+- **Greedy:** Choose the best option at the current time, without any consideration for the future. Ex: Dijkstra's algorithm, Prim's algorithm and Kruskal's algorithm
+- **Divide and Conquer:** Divide the problem into smaller sub-problems. Each sub-problem is then solved and the partial solutions are recombined to determine the overall solution. Ex: Binary Search, Quick Sort, Merge Sort and Tower of Hanoi
+- **Dynamic Programming:** Divide the problem into smaller sub-problems. Break it down into smaller but overlapping sub problems. Store the result and reuse it for the same sub-problems. This is called memoization and is a optimization technique that improves the time complexity of your algorithm. Ex: Fibonacci numbers and Climbing staircase
+- **Backtracking:** Generate all possible solutions. Check if the solution satisfies all the given constrains and only then you proceed with generating subsequent solutions. If the constraints are not satisfied, backtrack and go on a different path to find the solution. Ex: N-Queens problem
+
+# Data Structures
+
+- A data structure is a way to store and organize data so that it can be used efficiently
+- A data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to that data
+- Why learn data structures?
+  - Almost every application we build involves data that is modelled in a certain way
+  - To efficiently manage that data, you need data structures
+  - The difference between a function taking a few milliseconds vs a few seconds or even minutes comes down to the selection of the right data structure
+  - Data structures help you solve problems in a more efficient way, both in terms of time and memory
+    - DOM: Tree Data Structure
+    - Browser back and forward: Stack Data Structure
+    - OS job scheduling: Queue Data Structure
+  - Built in Data Structures:
+    - Arrays
+    - Objects
+    - Sets
+    - Maps
+  - Custom Data Structures:
+    - Stacks
+    - Queues
+    - Circular queues
+    - Linked lists
+    - Hash tables
+    - Trees
+    - Graphs
+
+## Array DS:
+
+- An array is a data structure that can hold a collection of values
+- Arrays can contain a mix of different data types. You can store strings, booleans, numbers or even objects all in the same array
+- Arrays are resizable. You don't have to declare the size of an array before creating it
+- JS arrays are zero-indexed and the insertion order is maintained
+- Arrays are iterables. They can be used with a for of loop
+
+## Object DS:
+
+- An object is an unordered collection of key-value pairs. The key must either be a string or symbol data type where as the value can be of any data type
+- To retrieve a value, you can use the corresponding key. This can be achieved using the dot notation or bracket notation
+- An object is not an iterable.
+
+## Sets DS:
+
+- A set is a data structure that can hold a collection of values. The values however must be unique
+- Set can contain a mix of different data types. You can store strings, booleans, numbers or even objects all in the same set
+- Sets are dynamically sized. You don't have to declare the size of a set before creating it
+- Sets do not maintain an insertion order
+- Sets are iterable.
+
+### Set vs Array:
+
+- Arrays can contain duplicate values whereas Sets cannot
+- Insertion order is maintained in arrays but it is not the case with sets
+- Searching and deleting an element in the set is faster compared to arrays
+
+## Map DS:
+
+- A map is an unordered collection of key-value pairs. Both keys and values can be of any data type
+- To retrieve a value, you can use the corresponding key
+- Maps are iterable
+
+### Map vs Object:
+
+- Objects are unordered whereas maps are ordered
+- Keys in objects can only be string or symbol type whereas in maps, they can be of any type
+- An object has a prototype and may contain a few default keys which may collide with your own keys if you're not careful. A map on the other hand does not contain any keys by default
+- Objects are not iterable whereas maps are iterable
+- The number of items in an object must be determined manually where as it is readily available with the size property in a map
+- Apart from storing data, you can attach functionality to an object whereas maps are restricted to just storing data
+
+## Stack DS:
+
+- The stack data structure is a sequential collection of elements that follows the principle of Last In First Out (LIFO)
+- The last element inserted into the stack is first element to be removed
+- Stack is an abstract data type. It is defined by its behavior rather than being a mathematical model
+- The stack data structure supports two main operations
+  - Push, which adds an element to the collection
+  - Pop, which removes the most recently added element from the collection
+- Stack use cases:
+  - Browser history tracking
+  - Undo operation when typing
+  - Expression conversions
+  - Call stack in Javascript runtime
+
+## Queue DS:
+
+- The queue data structure is a sequential collection of elements that follows the principle of First In First Out (FIFO)
+- The first element inserted into the queue is first element to be removed
+- Queue is an abstract data type. It is defined by its behavior rather than being a mathematical model
+- The queue data structure supports two main operations:
+  - Enqueue: Which adds an element to the rear/tail of the collection
+  - Dequeue: Which removes an element from the front/head of the collection
+- Queue use cases:
+  - Printers
+  - CPU task scheduling
+  - Callback queue in Javascript runtime
+
+## Circular Queue DS:
+
+- The size of the queue is fixed and a single block of memory is used as if the first element is connected to the last element
+- Also referred as circular buffer or ring buffer and follows FIFO principle
+- A circular queue will reuse the empty block created during the dequeue operation
+- When working with queues of fixed maximum size, a circular queue is a great implementation choice
+- The circular queue data structure supports two main operations:
+  - Enqueue: Which adds an element to the rear/tail of the collection
+  - Dequeue: Which removes an element from the front/head of the collection
+- Circular Queue use cases:
+    - Clock
+    - Streaming data
+    - Traffic lights
+
+## Linked List DS:
