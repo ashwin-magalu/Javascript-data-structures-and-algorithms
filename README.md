@@ -464,3 +464,12 @@ for (i = 1; i <= n; i++) {
     - Storage wise, an adjacency list is way more efficient
     - With an adjacency list, inserting and finding adjacent nodes is constant time complexity whereas with adjacency matrix, it is linear time complexity
     - An adjacency list allows you to store additional values with an edge such as weight of the edge. With adjacency matrix, such information would have to be stored externally
+
+# Further learning:
+
+- Priority Queue
+- Circular Linked Lists
+- AVL Trees, Red Black Trees and Tries
+- Directed Acyclic Graphs
+- Prim's, Kruskal's and Floyd's algorithms
+- Solve problems that utilize these data structures
