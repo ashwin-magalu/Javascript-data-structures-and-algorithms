@@ -339,24 +339,26 @@ for (i = 1; i <= n; i++) {
   - Enqueue: Which adds an element to the rear/tail of the collection
   - Dequeue: Which removes an element from the front/head of the collection
 - Circular Queue use cases:
-    - Clock
-    - Streaming data
-    - Traffic lights
+  - Clock
+  - Streaming data
+  - Traffic lights
 
 ## Linked List DS:
+
 - A linked list is a linear data structure that includes a series of connected nodes
 - Each node consists of a data value and a pointer that points to the next node
 - The list elements can be easily inserted or removed without reallocation or reorganization of the entire structure
 - Random access of elements is not feasible and accessing an element has linear time complexity
 - The linked list data structure supports three main operations:
-    - Insertion: To add an element at the beginning, end or at a given index in the list
-    - Deletion: To remove an element given its index or value
-    - Search: To find an element given its value
+  - Insertion: To add an element at the beginning, end or at a given index in the list
+  - Deletion: To remove an element given its index or value
+  - Search: To find an element given its value
 - Linked List use cases:
-    - All applications of both stacks and queues are applications of linked lists
-    - Image viewer
+  - All applications of both stacks and queues are applications of linked lists
+  - Image viewer
 
 ## Hash Table / Hash Map:
+
 - It is a data structure that is used to store key-value pairs
 - Given a key, you can associate a value with that key for very fast lookup
 - JavaScript's Object is a special implementation of the hash table data structure. However, Object class adds its own keys. Keys that you input may conflict and overwrite the inherited default properties
@@ -365,14 +367,100 @@ for (i = 1; i <= n; i++) {
 - We store the key value pairs in a fix sized array
 - Arrays have a numeric index
 - How do we go from using a string as an index to number as an index?
-    - A hashing function accepts the string key, converts it into a hash code using a defined logic and then maps it into a numeric index that is within the bounds of the array
-    - Using the index, store the value
-    - The same hashing function is reused to retrieve the value given a key:
-        - Set to store a key-value pair
-        - Get to retrieve a value given its key
-        - Remove to delete a key value pair
+  - A hashing function accepts the string key, converts it into a hash code using a defined logic and then maps it into a numeric index that is within the bounds of the array
+  - Using the index, store the value
+  - The same hashing function is reused to retrieve the value given a key:
+    - Set to store a key-value pair
+    - Get to retrieve a value given its key
+    - Remove to delete a key value pair
 - Hash table use cases:
-    - Hash tables are typically implemented where constant time lookup and insertion are required
-    - Database indexing
-    - Caches
+  - Hash tables are typically implemented where constant time lookup and insertion are required
+  - Database indexing
+  - Caches
 
+## Tree:
+
+- A tree is a hierarchial data structure that consists of nodes connected by edges
+- A tree is a non-linear data structure, compared to arrays, linked lists, stacks, and queues which are linear data structures
+- In linear data structures, the time required to search is proportional to the size of the data set
+- Trees however, owing to the non-linear nature allow quicker and easier access to the data
+- A tree will not contain any loops or cycles.
+- Tree use cases:
+
+  - File system for directory structure
+  - A family tree
+  - An organization tree
+  - DOM
+  - Chat bots
+  - Abstract syntax tree
+
+### Tree Terminology:
+
+![Tree Structure](tree-structure.png)
+
+- **Root:** The root node is the topmost node in the tree hierarchy. In other words, the root node is the one that doesn't have any parent. In the above structure, node numbered 1 is the root node of the tree. If a node is directly linked to some other node, it would be called a parent-child relationship.
+- **Child node:** If the node is a descendant of any node, then the node is known as a child node.
+- **Parent:** If the node contains any sub-node, then that node is said to be the parent of that sub-node.
+- **Sibling:** The nodes that have the same parent are known as siblings.
+- **Leaf Node:** The node of the tree, which doesn't have any child node, is called a leaf node. A leaf node is the bottom-most node of the tree. There can be any number of leaf nodes present in a general tree. Leaf nodes can also be called external nodes.Internal nodes: A node has at least one child node known as an internal
+- **Ancestor node:** An ancestor of a node is any predecessor node on a path from the root to that node. The root node doesn't have any ancestors. In the tree shown in the above image, nodes 1, 2, and 5 are the ancestors of node 10.
+- **Descendant:** The immediate successor of the given node is known as a descendant of a node. In the above figure, 10 is the descendant of node 5.
+- **Number of edges:** If there are n nodes, then there would n-1 edges. Each arrow in the structure represents the link or path. Each node, except the root node, will have at least one incoming link known as an edge. There would be one link for the parent-child relationship.
+- **Depth of node x:** The depth of node x can be defined as the length of the path from the root to the node x. One edge contributes one-unit length in the path. So, the depth of node x can also be defined as the number of edges between the root node and the node x. The root node has 0 depth.
+- **Height of node x:** The height of node x can be defined as the longest path from the node x to the leaf node.
+
+### Applications of trees:
+
+- **Storing naturally hierarchical data:** Trees are used to store the data in the hierarchical structure. For example, the file system. The file system stored on the disc drive, the file and folder are in the form of the naturally hierarchical data and stored in the form of trees.
+- **Organize data:** It is used to organize data for efficient insertion, deletion and searching. For example, a binary tree has a logN time for searching an element.
+- **Trie:** It is a special kind of tree that is used to store the dictionary. It is a fast and efficient way for dynamic spell checking.
+- **Heap:** It is also a tree data structure implemented using arrays. It is used to implement priority queues.
+- **B-Tree and B+Tree:** B-Tree and B+Tree are the tree data structures used to implement indexing in databases.
+- **Routing table:** The tree data structure is also used to store the data in routing tables in the routers.
+
+### Types of Tree data structure:
+
+- **General Tree:** The general tree is one of the types of tree data structure. In the general tree, a node can have either 0 or maximum n number of nodes. There is no restriction imposed on the degree of the node (the number of nodes that a node can contain). The topmost node in a general tree is known as a root node. The children of the parent node are known as subtrees. There can be n number of subtrees in a general tree. In the general tree, the subtrees are unordered as the nodes in the subtree cannot be ordered. Every non-empty tree has a downward edge, and these edges are connected to the nodes known as child nodes. The root node is labeled with level 0. The nodes that have the same parent are known as siblings.
+- **Binary Tree:** Here, binary name itself suggests two numbers, i.e., 0 and 1. In a binary tree, each node in a tree can have utmost two child nodes. Here, utmost means whether the node has 0 nodes, 1 node or 2 nodes.
+- **Binary Search Tree:** Binary search tree is a non-linear data structure in which one node is connected to n number of nodes. It is a node-based data structure. A node can be represented in a binary search tree with three fields, i.e., data part, left-child, and right-child. A node can be connected to the utmost two child nodes in a binary search tree, so the node contains two pointers (left child and right child pointer). Every node in the left subtree must contain a value less than the value of the root node, and the value of each node in the right subtree must be bigger than the value of the root node.
+- **AVL Tree:** It is one of the types of the binary tree, or we can say that it is a variant of the binary search tree. AVL tree satisfies the property of the binary tree as well as of the binary search tree. It is a self-balancing binary search tree that was invented by Adelson Velsky Lindas. Here, self-balancing means that balancing the heights of left subtree and right subtree. This balancing is measured in terms of the balancing factor. We can consider a tree as an AVL tree if the tree obeys the binary search tree as well as a balancing factor. The balancing factor can be defined as the difference between the height of the left subtree and the height of the right subtree. The balancing factor's value must be either 0, -1, or 1; therefore, each node in the AVL tree should have the value of the balancing factor either as 0, -1, or 1.
+- **Red-Black Tree:** The red-Black tree is the binary search tree. The prerequisite of the Red-Black tree is that we should know about the binary search tree. In a binary search tree, the value of the left-subtree should be less than the value of that node, and the value of the right-subtree should be greater than the value of that node. As we know that the time complexity of binary search in the average case is log2n, the best case is O(1), and the worst case is O(n). When any operation is performed on the tree, we want our tree to be balanced so that all the operations like searching, insertion, deletion, etc., take less time, and all these operations will have the time complexity of log2n. The red-black tree is a self-balancing binary search tree. AVL tree is also a height balancing binary search tree then why do we require a Red-Black tree. In the AVL tree, we do not know how many rotations would be required to balance the tree, but in the Red-black tree, a maximum of 2 rotations are required to balance the tree. It contains one extra bit that represents either the red or black color of a node to ensure the balancing of the tree.
+- **Splay Tree:** The splay tree data structure is also binary search tree in which recently accessed element is placed at the root position of tree by performing some rotation operations. Here, splaying means the recently accessed node. It is a self-balancing binary search tree having no explicit balance condition like AVL tree. It might be a possibility that height of the splay tree is not balanced, i.e., height of both left and right subtrees may differ, but the operations in splay tree takes order of logN time where n is the number of nodes. Splay tree is a balanced tree but it cannot be considered as a height balanced tree because after each operation, rotation is performed which leads to a balanced tree.
+- **Treap:** Treap data structure came from the Tree and Heap data structure. So, it comprises the properties of both Tree and Heap data structures. In Binary search tree, each node on the left subtree must be equal or less than the value of the root node and each node on the right subtree must be equal or greater than the value of the root node. In heap data structure, both right and left subtrees contain larger keys than the root; therefore, we can say that the root node contains the lowest value. In treap data structure, each node has both key and priority where key is derived from the Binary search tree and priority is derived from the heap data structure. The Treap data structure follows two properties which are given below:
+  - Right child of a node>=current node and left child of a node <=current node (binary tree)
+  - Children of any subtree must be greater than the node (heap)
+- **B-Tree:** B-tree is a balanced m-way tree where m defines the order of the tree. Till now, we read that the node contains only one key but b-tree can have more than one key, and more than 2 children. It always maintains the sorted data. In binary tree, it is possible that leaf nodes can be at different levels, but in b-tree, all the leaf nodes must be at the same level. If order is m then node has the following properties:
+  - Each node in a b-tree can have maximum m children
+  - For minimum children, a leaf node has 0 children, root node has minimum 2 children and internal node has minimum ceiling of m/2 children. For example, the value of m is 5 which means that a node can have 5 children and internal nodes can contain maximum 3 children.
+  - Each node has maximum (m-1) keys.
+- The root node must contain minimum 1 key and all other nodes must contain at least ceiling of m/2 minus 1 keys.
+
+## Graph:
+
+- A graph is a non-linear data structure that consists of a finite number of nodes or vertices connected by edges.
+- Trees are a specific type of graph data structure
+- Types of graphs:
+  - Directed:
+    - A graph in which the edges have a direction
+    - Edges are usually represented by arrows pointing in the direction the graph can be traversed
+  - Undirected:
+    - A graph in which the edges are bidirectional
+    - The graph can be traversed in either direction
+    - The absence of an arrow tells us that the graph is undirected
+- Graph usages:
+  - Google Maps
+  - Social media sites
+- Graph Representation:
+  - Adjacency matrix:
+    - An adjacency matrix is a 2D array of size V x V, where, V is the number of vertices in the graph
+    - Each row and column represent a vertex
+    - If the value of any element say, matrix[i][j] is 1, it represents that there is an edge connecting vertex i and vertex j
+  - Adjacency list:
+    - Vertices are stored in a map like data structure, and every vertex stores a list of its adjacent vertices
+    - It is more efficient than the adjacency matrix when the graph is sparse
+  - Adjacency matrix vs Adjacency list:
+    - With an adjacency list, we only need to store the values for the edges that exist.
+    - With an adjacency matrix, you store values irrespective of whether an edge exists or not.
+    - Storage wise, an adjacency list is way more efficient
+    - With an adjacency list, inserting and finding adjacent nodes is constant time complexity whereas with adjacency matrix, it is linear time complexity
+    - An adjacency list allows you to store additional values with an edge such as weight of the edge. With adjacency matrix, such information would have to be stored externally
